@@ -75,7 +75,28 @@
   }
 
   body {
-    @apply font-sans antialiased bg-background text-gray-100 min-h-screen;
+    @apply font-sans antialiased text-gray-100 min-h-screen;
+    background-attachment: fixed;
+    background-image: url('/assets/space-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .parallax-wrapper {
+    height: 100vh;
+    overflow-x: hidden;
+    perspective: 10px;
+    transform-style: preserve-3d;
+  }
+
+  .parallax-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translateZ(-10px) scale(2);
   }
 
   .prose {

@@ -9,9 +9,10 @@ import ScrollToTop from "@/components/ScrollToTop";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="parallax-wrapper">
+      <div className="parallax-bg"></div>
       <Navbar />
-      <main>
+      <main className="relative z-10">
         <Hero />
         <About />
         <Skills />
