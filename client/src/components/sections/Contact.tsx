@@ -7,31 +7,31 @@ const socialLinks = [
   {
     name: "GitHub",
     icon: Github,
-    href: "https://github.com/yourusername",
+    href: "https://github.com/Ameya386",
     color: "hover:text-[#333]",
   },
   {
     name: "LinkedIn",
     icon: Linkedin,
-    href: "https://linkedin.com/in/yourusername",
+    href: "https://www.linkedin.com/in/ameya-kamble-7255b1250/",
     color: "hover:text-[#0077b5]",
   },
   {
     name: "Twitter",
     icon: Twitter,
-    href: "https://twitter.com/yourusername",
+    href: "https://x.com/Smarsh50879858",
     color: "hover:text-[#1DA1F2]",
   },
   {
     name: "Email",
     icon: Mail,
-    href: "mailto:your.email@example.com",
+    href: "https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSDZNzRllCsHjDrhzjqCdCTVvRJWQVBHsbCZKtQGgQpfnHpPrmxtnXgzFMVDnrGFCSLXRVKq",
     color: "hover:text-[#EA4335]",
   },
   {
     name: "Instagram",
     icon: Instagram,
-    href: "https://instagram.com/yourusername",
+    href: "https://www.instagram.com/amez290_0/",
     color: "hover:text-[#E4405F]",
   },
 ];

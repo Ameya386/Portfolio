@@ -25,7 +25,7 @@ export default function Hero() {
           className="text-5xl md:text-7xl font-bold mb-6"
         >
           <span className="bg-gradient-to-r from-blue-500 to-violet-500 bg-clip-text text-transparent">
-            Your Name
+            Ameya Kamble
           </span>
         </motion.h1>
         <motion.p
