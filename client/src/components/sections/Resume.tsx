@@ -18,7 +18,7 @@ export default function Resume() {
         <Card>
           <CardContent className="p-6">
             <div className="prose prose-lg max-w-none">
-              <p className="text-center mb-8">
+              <p className="text-center mb-8 text-foreground">
                 Download my resume to learn more about my experience and qualifications.
               </p>
               <div className="flex justify-center">
