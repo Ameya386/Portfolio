@@ -84,7 +84,7 @@ export default function Skills() {
         >
           Tools Used
         </motion.h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {tools.map((tool, index) => (
             <motion.div
               key={tool.name}
