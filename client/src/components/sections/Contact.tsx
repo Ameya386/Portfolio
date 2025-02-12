@@ -1,129 +1,81 @@
 import { motion } from "framer-motion";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { insertMessageSchema, type InsertMessage } from "@shared/schema";
-import { useMutation } from "@tanstack/react-query";
-import { apiRequest } from "@/lib/queryClient";
-import { useToast } from "@/hooks/use-toast";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Github, Linkedin, Mail, Twitter, Instagram } from "lucide-react";
+
+const socialLinks = [
+  {
+    name: "GitHub",
+    icon: Github,
+    href: "https://github.com/yourusername",
+    color: "hover:text-[#333]",
+  },
+  {
+    name: "LinkedIn",
+    icon: Linkedin,
+    href: "https://linkedin.com/in/yourusername",
+    color: "hover:text-[#0077b5]",
+  },
+  {
+    name: "Twitter",
+    icon: Twitter,
+    href: "https://twitter.com/yourusername",
+    color: "hover:text-[#1DA1F2]",
+  },
+  {
+    name: "Email",
+    icon: Mail,
+    href: "mailto:your.email@example.com",
+    color: "hover:text-[#EA4335]",
+  },
+  {
+    name: "Instagram",
+    icon: Instagram,
+    href: "https://instagram.com/yourusername",
+    color: "hover:text-[#E4405F]",
+  },
+];
 
 export default function Contact() {
-  const { toast } = useToast();
-  const form = useForm<InsertMessage>({
-    resolver: zodResolver(insertMessageSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      message: "",
-    },
-  });
-
-  const mutation = useMutation({
-    mutationFn: async (data: InsertMessage) => {
-      const res = await apiRequest("POST", "/api/contact", data);
-      return res.json();
-    },
-    onSuccess: () => {
-      toast({
-        title: "Message sent!",
-        description: "Thank you for your message. I'll get back to you soon.",
-      });
-      form.reset();
-    },
-    onError: () => {
-      toast({
-        title: "Error",
-        description: "Something went wrong. Please try again.",
-        variant: "destructive",
-      });
-    },
-  });
-
   return (
     <section id="contact" className="py-20 px-4">
-      <div className="container mx-auto max-w-md">
+      <div className="container mx-auto max-w-3xl">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-3xl font-bold text-center mb-12"
+          className="text-3xl font-bold text-center mb-12 gradient-text"
         >
-          Contact Me
+          Let's Connect
         </motion.h2>
-        <Card>
-          <CardContent className="p-6">
-            <Form {...form}>
-              <form
-                onSubmit={form.handleSubmit((data) => mutation.mutate(data))}
-                className="space-y-6"
-              >
-                <FormField
-                  control={form.control}
-                  name="name"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Name</FormLabel>
-                      <FormControl>
-                        <Input placeholder="Your name" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="email"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Email</FormLabel>
-                      <FormControl>
-                        <Input
-                          type="email"
-                          placeholder="your@email.com"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="message"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Message</FormLabel>
-                      <FormControl>
-                        <Textarea
-                          placeholder="Your message"
-                          className="min-h-[120px]"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <Button
-                  type="submit"
-                  className="w-full"
-                  disabled={mutation.isPending}
+        <Card className="backdrop-blur-sm bg-background/30">
+          <CardContent className="p-8">
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
+              {socialLinks.map((link, index) => (
+                <motion.div
+                  key={link.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="flex flex-col items-center"
                 >
-                  {mutation.isPending ? "Sending..." : "Send Message"}
-                </Button>
-              </form>
-            </Form>
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group p-4 transition-all duration-300 hover:scale-110"
+                  >
+                    <link.icon 
+                      className={`w-8 h-8 transition-colors duration-300 ${link.color}`}
+                    />
+                    <span className="mt-2 text-sm font-medium text-muted-foreground group-hover:text-foreground">
+                      {link.name}
+                    </span>
+                  </a>
+                </motion.div>
+              ))}
+            </div>
           </CardContent>
         </Card>
       </div>
