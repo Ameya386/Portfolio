@@ -17,7 +17,7 @@ import {
   SiAnaconda,
   SiFigma,
   SiCanva,
-  SiWindows,
+  SiWindows10,
 } from "react-icons/si";
 import { FaJava } from "react-icons/fa";
 import { VscCode } from "react-icons/vsc";
@@ -43,7 +43,7 @@ const tools = [
   { name: "Anaconda", icon: SiAnaconda, color: "text-green-500" },
   { name: "Figma", icon: SiFigma, color: "text-purple-500" },
   { name: "Canva", icon: SiCanva, color: "text-blue-400" },
-  { name: "Windows", icon: SiWindows, color: "text-blue-500" },
+  { name: "Windows", icon: SiWindows10, color: "text-blue-500" },
 ];
 
 export default function Skills() {
