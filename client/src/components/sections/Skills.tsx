@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -53,7 +52,9 @@ export default function Skills() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-blue-500 to-violet-500 bg-clip-text text-transparent"
+          className="section-heading"
+          onViewportEnter={(e) => e.target.classList.add('visible')}
+          onViewportLeave={(e) => e.target.classList.remove('visible')}
         >
           Skills
         </motion.h2>
@@ -80,7 +81,9 @@ export default function Skills() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-blue-500 to-violet-500 bg-clip-text text-transparent"
+          className="section-heading"
+          onViewportEnter={(e) => e.target.classList.add('visible')}
+          onViewportLeave={(e) => e.target.classList.remove('visible')}
         >
           Tools Used
         </motion.h2>
