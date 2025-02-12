@@ -9,9 +9,11 @@ export default function About() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-blue-500 to-violet-500 bg-clip-text text-transparent"
+          className="section-heading text-3xl uppercase mx-auto"
+          onViewportEnter={(e) => e.target.classList.add('visible')}
+          onViewportLeave={(e) => e.target.classList.remove('visible')}
         >
-          About Me
+          ABOUT ME
         </motion.h2>
         <Card>
           <CardContent className="p-6">
