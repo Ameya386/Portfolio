@@ -127,30 +127,6 @@
     animation: gradient 8s ease infinite;
   }
 
-  .section-heading {
-    @apply text-3xl md:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-blue-500 to-violet-500 bg-clip-text text-transparent;
-    position: relative;
-    display: inline-block;
-  }
-
-  .section-heading::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: -4px;
-    left: 0;
-    background: linear-gradient(to right, #3b82f6, #8b5cf6);
-    transform: scaleX(0);
-    transform-origin: bottom right;
-    transition: transform 0.5s ease-out;
-  }
-
-  .section-heading.visible::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-  }
-
   @keyframes gradient {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
