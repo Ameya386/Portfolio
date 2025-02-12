@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -12,6 +13,12 @@ import {
   SiFlask,
   SiMysql,
   SiPython,
+  SiVisualstudiocode,
+  SiIntellijidea,
+  SiAnaconda,
+  SiFigma,
+  SiCanva,
+  SiWindows11,
 } from "react-icons/si";
 import { FaJava } from "react-icons/fa";
 
@@ -30,6 +37,15 @@ const skills = [
   { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-cyan-500" },
 ];
 
+const tools = [
+  { name: "VS Code", icon: SiVisualstudiocode, color: "text-blue-500" },
+  { name: "IntelliJ IDEA", icon: SiIntellijidea, color: "text-pink-500" },
+  { name: "Anaconda", icon: SiAnaconda, color: "text-green-500" },
+  { name: "Figma", icon: SiFigma, color: "text-purple-500" },
+  { name: "Canva", icon: SiCanva, color: "text-blue-400" },
+  { name: "Windows", icon: SiWindows11, color: "text-blue-500" },
+];
+
 export default function Skills() {
   return (
     <section id="skills" className="py-20 px-4">
@@ -42,7 +58,7 @@ export default function Skills() {
         >
           Skills
         </motion.h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
           {skills.map((skill, index) => (
             <motion.div
               key={skill.name}
@@ -55,6 +71,33 @@ export default function Skills() {
                 <CardContent className="p-6 flex flex-col items-center">
                   <skill.icon className={`w-12 h-12 ${skill.color}`} />
                   <h3 className="font-medium mt-4">{skill.name}</h3>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
+        </div>
+
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-blue-500 to-violet-500 bg-clip-text text-transparent"
+        >
+          Tools Used
+        </motion.h2>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+          {tools.map((tool, index) => (
+            <motion.div
+              key={tool.name}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+            >
+              <Card>
+                <CardContent className="p-6 flex flex-col items-center">
+                  <tool.icon className={`w-12 h-12 ${tool.color}`} />
+                  <h3 className="font-medium mt-4">{tool.name}</h3>
                 </CardContent>
               </Card>
             </motion.div>
