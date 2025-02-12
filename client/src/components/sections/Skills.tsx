@@ -66,7 +66,7 @@ export default function Skills() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
             >
-              <Card>
+              <Card className="glowing-card">
                 <CardContent className="p-6 flex flex-col items-center">
                   <skill.icon className={`w-12 h-12 ${skill.color}`} />
                   <h3 className="font-medium mt-4">{skill.name}</h3>
@@ -93,7 +93,7 @@ export default function Skills() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
             >
-              <Card>
+              <Card className="glowing-card">
                 <CardContent className="p-6 flex flex-col items-center">
                   <tool.icon className={`w-12 h-12 ${tool.color}`} />
                   <h3 className="font-medium mt-4">{tool.name}</h3>
