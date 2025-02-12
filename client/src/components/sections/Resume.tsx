@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -23,7 +24,7 @@ export default function Resume() {
               </p>
               <div className="flex justify-center">
                 <Button size="lg" asChild>
-                  <a href="/path-to-your-resume.pdf" download>
+                  <a href="/assets/resume.pdf" download="Ameya_Kamble_Resume.pdf">
                     <FileDown className="mr-2 h-5 w-5" />
                     Download Resume
                   </a>
