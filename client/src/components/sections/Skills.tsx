@@ -13,7 +13,6 @@ import {
   SiFlask,
   SiMysql,
   SiPython,
-  SiVisualstudio,
   SiIntellijidea,
   SiAnaconda,
   SiFigma,
@@ -21,6 +20,7 @@ import {
   SiWindows,
 } from "react-icons/si";
 import { FaJava } from "react-icons/fa";
+import { VscCode } from "react-icons/vsc";
 
 const skills = [
   { name: "React", icon: SiReact, color: "text-blue-500" },
@@ -38,7 +38,7 @@ const skills = [
 ];
 
 const tools = [
-  { name: "VS Code", icon: SiVisualstudio, color: "text-blue-500" },
+  { name: "VS Code", icon: VscCode, color: "text-blue-500" },
   { name: "IntelliJ IDEA", icon: SiIntellijidea, color: "text-pink-500" },
   { name: "Anaconda", icon: SiAnaconda, color: "text-green-500" },
   { name: "Figma", icon: SiFigma, color: "text-purple-500" },
