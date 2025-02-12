@@ -1,11 +1,32 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import { SiReact, SiNodedotjs, SiTypescript, SiTailwindcss } from "react-icons/si";
+import { 
+  SiReact, 
+  SiNodedotjs, 
+  SiTypescript, 
+  SiTailwindcss,
+  SiPython,
+  SiOpenjdk,
+  SiCplusplus,
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+  SiFlask,
+  SiPostgresql
+} from "react-icons/si";
 
 const skills = [
   { name: "React", icon: SiReact, color: "text-blue-500" },
   { name: "Node.js", icon: SiNodedotjs, color: "text-green-500" },
   { name: "TypeScript", icon: SiTypescript, color: "text-blue-600" },
+  { name: "Python", icon: SiPython, color: "text-yellow-500" },
+  { name: "Java", icon: SiOpenjdk, color: "text-red-500" },
+  { name: "C++", icon: SiCplusplus, color: "text-blue-700" },
+  { name: "HTML5", icon: SiHtml5, color: "text-orange-500" },
+  { name: "CSS3", icon: SiCss3, color: "text-blue-400" },
+  { name: "JavaScript", icon: SiJavascript, color: "text-yellow-400" },
+  { name: "Flask", icon: SiFlask, color: "text-gray-700" },
+  { name: "SQL", icon: SiPostgresql, color: "text-blue-400" },
   { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-cyan-500" },
 ];
 

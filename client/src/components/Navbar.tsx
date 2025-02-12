@@ -7,6 +7,7 @@ const links = [
   { href: "#about", label: "About" },
   { href: "#skills", label: "Skills" },
   { href: "#projects", label: "Projects" },
+  { href: "#resume", label: "Resume" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -21,6 +22,14 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.querySelector(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      setIsOpen(false);
+    }
+  };
 
   return (
     <nav
@@ -37,19 +46,13 @@ export default function Navbar() {
           {/* Desktop Menu */}
           <div className="hidden md:flex gap-8">
             {links.map((link) => (
-              <a
+              <button
                 key={link.href}
-                href={link.href}
+                onClick={() => scrollToSection(link.href)}
                 className="text-muted-foreground hover:text-foreground transition-colors"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document
-                    .querySelector(link.href)
-                    ?.scrollInView({ behavior: "smooth" });
-                }}
               >
                 {link.label}
-              </a>
+              </button>
             ))}
           </div>
 
@@ -75,20 +78,13 @@ export default function Navbar() {
             >
               <div className="py-4 space-y-4">
                 {links.map((link) => (
-                  <a
+                  <button
                     key={link.href}
-                    href={link.href}
-                    className="block text-muted-foreground hover:text-foreground transition-colors"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      document
-                        .querySelector(link.href)
-                        ?.scrollIntoView({ behavior: "smooth" });
-                      setIsOpen(false);
-                    }}
+                    onClick={() => scrollToSection(link.href)}
+                    className="block w-full text-left text-muted-foreground hover:text-foreground transition-colors"
                   >
                     {link.label}
-                  </a>
+                  </button>
                 ))}
               </div>
             </motion.div>
