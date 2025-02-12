@@ -24,7 +24,13 @@ export default function Resume() {
               </p>
               <div className="flex justify-center">
                 <Button size="lg" asChild>
-                  <a href="/assets/resume.pdf" download="Ameya_Kamble_Resume.pdf">
+                  <a 
+                    href="/assets/resume.pdf" 
+                    download="Ameya_Kamble_Resume.pdf"
+                    type="application/pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <FileDown className="mr-2 h-5 w-5" />
                     Download Resume
                   </a>
