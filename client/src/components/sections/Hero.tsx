@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
@@ -9,8 +10,8 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative px-4">
-      <div className="text-center max-w-3xl mx-auto">
+    <section id="home" className="min-h-screen flex items-center justify-between relative px-4">
+      <div className="max-w-xl">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -33,7 +34,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto h-[60px]"
+          className="text-xl md:text-2xl text-muted-foreground mb-8 h-[60px]"
         >
           <span ref={(el) => {
             if (el && !el.hasAttribute('data-typed-initialized')) {
@@ -74,22 +75,34 @@ export default function Hero() {
             Contact Me
           </Button>
         </motion.div>
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.8 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        >
-          <Button
-            onClick={scrollToAbout}
-            variant="ghost"
-            size="icon"
-            className="animate-bounce rounded-full"
-          >
-            <ChevronDown className="h-6 w-6" />
-          </Button>
-        </motion.div>
       </div>
+      <motion.div
+        initial={{ opacity: 0, x: 20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+        className="hidden md:block w-1/2 max-w-lg"
+      >
+        <img 
+          src="/assets/hero-image.png" 
+          alt="Developer illustration" 
+          className="w-full h-auto"
+        />
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.8 }}
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+      >
+        <Button
+          onClick={scrollToAbout}
+          variant="ghost"
+          size="icon"
+          className="animate-bounce rounded-full"
+        >
+          <ChevronDown className="h-6 w-6" />
+        </Button>
+      </motion.div>
     </section>
   );
 }
