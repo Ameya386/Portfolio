@@ -40,10 +40,10 @@ export default function Hero() {
               el.setAttribute('data-typed-initialized', 'true');
               new Typed(el, {
                 strings: [
-                  'A Full Stack Developer',
-                  'A Software Developer',
-                  'An AI/ML Enthusiast',
-                  'A Competitive Coder'
+                  '💻 A Full Stack Developer',
+                  '🚀 A Software Developer',
+                  '🤖 An AI/ML Enthusiast',
+                  '⚡ A Competitive Coder'
                 ],
                 typeSpeed: 50,
                 backSpeed: 30,

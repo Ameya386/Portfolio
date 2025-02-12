@@ -41,7 +41,7 @@ export default function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <a href="#" className="font-bold text-lg">
-            Ameya Kamble
+            Welcome
           </a>
 
           {/* Desktop Menu */}
