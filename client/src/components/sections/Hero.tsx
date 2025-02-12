@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
+import Typed from 'typed.js';
 
 export default function Hero() {
   const scrollToAbout = () => {
@@ -28,14 +29,30 @@ export default function Hero() {
             Ameya Kamble
           </span>
         </motion.h1>
-        <motion.p
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto"
+          className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto h-[60px]"
         >
-          A passionate Full Stack Developer crafting beautiful and functional web experiences
-        </motion.p>
+          <span ref={(el) => {
+            if (el && !el.hasAttribute('data-typed-initialized')) {
+              el.setAttribute('data-typed-initialized', 'true');
+              new Typed(el, {
+                strings: [
+                  'A Full Stack Developer',
+                  'A Software Developer',
+                  'An AI/ML Enthusiast',
+                  'A Competitive Coder'
+                ],
+                typeSpeed: 50,
+                backSpeed: 30,
+                loop: true,
+                backDelay: 1500
+              });
+            }
+          }}></span>
+        </motion.div>
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
