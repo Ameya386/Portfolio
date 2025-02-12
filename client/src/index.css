@@ -40,7 +40,7 @@
   }
 
   body {
-    @apply font-sans antialiased bg-background text-foreground min-h-screen;
+    @apply font-sans antialiased bg-background text-gray-100 min-h-screen;
     background: radial-gradient(ellipse at top, hsl(217, 91%, 60%, 0.15), transparent),
                 radial-gradient(ellipse at bottom, hsl(280, 91%, 60%, 0.15), transparent);
   }

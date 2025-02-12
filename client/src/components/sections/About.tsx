@@ -22,14 +22,16 @@ export default function About() {
               className="prose prose-lg max-w-none"
             >
               <p>
-                I'm a passionate full-stack developer with over 5 years of experience
-                building web applications. I specialize in React, Node.js, and
-                modern web technologies.
+                Hello Everyone,
               </p>
               <p>
-                My journey in software development began when I built my first
-                website in college. Since then, I've worked with various startups
-                and enterprises, helping them create robust and scalable solutions.
+                My name is Ameya Kamble, and I am from Maharashtra, India. I am currently in my third year of pursuing a Bachelor of Engineering in Computer Science at Pune University.
+              </p>
+              <p>
+                I have a strong proficiency in classical programming languages such as C++ and Python. My academic and personal interests are centered around building innovative applications, with a particular focus on Artificial Intelligence, Machine Learning, and Web Technologies. I am passionate about leveraging these technologies to create impactful solutions and am eager to contribute to advancements in these fields.
+              </p>
+              <p>
+                Thank you for your time, and I look forward to connecting with like-minded professionals and peers.
               </p>
             </motion.div>
           </CardContent>
