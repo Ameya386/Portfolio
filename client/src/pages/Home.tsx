@@ -9,7 +9,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 
 export default function Home() {
   return (
-    <div className="parallax-wrapper">
+    <div className="parallax-wrapper" style={{ backgroundColor: "black" }}>
       <div className="parallax-bg"></div>
       <Navbar />
       <main className="relative z-10">
